@@ -1,0 +1,29 @@
+body {
+  background-color: #999;
+}
+#container {
+  background-color: #ccc;
+  width: 960px;
+  margin: 0 auto;
+}
+header {
+  background-color: #bfecb3;
+  padding: 0 10px 0 20px;
+  border-bottom: 1px solid #666;
+}
+nav {
+  float: right;
+  margin: 10px 0;
+}
+nav ul.menu {
+  list-style: none;
+}
+nav ul.menu li {
+  float: left;
+  padding: 0 5px;
+}
+.logo {
+  height: 120px;
+  position: relative;
+  top: -5px;
+}
