@@ -7,6 +7,12 @@ gem 'rails', '3.0.11'
 
 gem 'sqlite3', '1.3.5'
 
+# OpenID - used for authentication
+gem 'ruby-openid', '2.1.8'
+gem 'authlogic', '3.1.0'
+gem 'authlogic-oid', '1.0.4'
+gem 'rack-openid', '1.3.1'
+
 group :development do
   gem 'rspec-rails', '2.6.1'
 end

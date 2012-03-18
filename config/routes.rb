@@ -1,9 +1,11 @@
 Supermit::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/about"
+  resource :session
+  resources :users
   
-  get "pages/contact"
+  match '/about', :to => 'pages#about'
+  match '/users/:id/dashboard', :to => 'users#show'
+  root :to => 'pages#home'
+  #map.resource :openid, :member => { :complete => :get }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
