@@ -1,5 +1,5 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
-<div class="todos">
+<div class="todos-container clearfix">
   <h3>To Do:</h3>
   <% unless @user.todos.empty? %>
     <% parent_todos = @user.todos.where("parent_id = id").order("due_at ASC") %>
@@ -11,8 +11,9 @@
       children.each do |c|
         todos << c unless c.id == c.parent_id
       end
-    end %>
-    <table>
+    end
+    %>
+    <table class="todos-table">
       <thead>
         <tr>
           <th>Parent ID</th>
@@ -27,8 +28,11 @@
       <%= render todos %>
     </table>
   <% end %>
-  <% #form_for %>
+  <% #form_for
+  %>
 </div>
+<div style="clear:both">
 <pre>
   <%= @user.to_yaml %>  
 </pre>
+</div>

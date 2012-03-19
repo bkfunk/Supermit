@@ -49,10 +49,14 @@
           
     </header>
     <section>
-      <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
+      <div class="flash">
+        <% flash.each do |key, value| %>
+          <div class="<%= key %>"><%= value %></div>
         <% end %>
-      <%= yield %>
+      </div>
+      <div class="main-content">
+        <%= yield %>
+      </div>
     </section>
     <footer>
       

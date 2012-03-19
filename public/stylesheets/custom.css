@@ -77,12 +77,16 @@ nav ul.nav-menu-list li a:hover {
 /* Main content */
 section {
   background-color: white;
+  padding: 10px 20px;
 }
 
 
 
 /* Todo List */
-
+.todos-container {
+  float: left;
+  width: 200px;
+}
 
 
 /* Fonts */
@@ -93,9 +97,12 @@ section {
 .cutive {
   font-family: 'Cutive', serif;
 }
-#user-menu, .lustria {
+#user-menu, section, .lustria {
   font-family: 'Lustria', serif;
 }
+
+
+
 
 .clearfix:after {
 	content: ".";
