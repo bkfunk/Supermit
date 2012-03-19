@@ -9,21 +9,107 @@ body {
 header {
   background-color: #bfecb3;
   padding: 0 10px 0 20px;
-  border-bottom: 1px solid #666;
+  position: relative;
 }
-nav {
-  float: right;
-  margin: 10px 0;
+
+#branding {
+  float: left;
+  position: relative;
+  height: 115px;
+  width: 360px;
 }
-nav ul.menu {
+#logo {
+  height: 120px;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+#motto {
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+/* Menus */
+ul.menu {
   list-style: none;
 }
-nav ul.menu li {
+ul.menu li {
   float: left;
   padding: 0 5px;
 }
-.logo {
-  height: 120px;
-  position: relative;
-  top: -5px;
+#user-menu {
+  float: right;
+  margin: 10px 0;
+}
+#user-menu a:link, #user-menu a:active { 
+  text-decoration: none;
+}
+#user-menu a:hover {
+  text-decoration: overline;
+}
+
+
+nav {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+}
+nav ul.nav-menu-list li.tab {
+  background-color: #ccc;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #999;
+  font-size: 16px;
+  padding: 2px 10px;
+  margin: 0px 2px;
+}
+nav ul.nav-menu-list li.selected-tab {
+  background-color: white;
+  border-bottom: 1px solid white;
+}
+nav ul.nav-menu-list li a {
+  text-decoration: none;
+}
+nav ul.nav-menu-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+section {
+  background-color: white;
+}
+
+
+
+/* Todo List */
+
+
+
+/* Fonts */
+#motto, nav, .ruluko {
+  font-family: 'Ruluko', sans-serif;
+}
+
+.cutive {
+  font-family: 'Cutive', serif;
+}
+#user-menu, .lustria {
+  font-family: 'Lustria', serif;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+
+tr.child td.title {
+  padding-left: 20px;
+}
+.hidden {
+  display: none;
 }

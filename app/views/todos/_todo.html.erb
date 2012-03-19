@@ -1,0 +1,12 @@
+<tr class="todo-row <%= todo.parent_id == todo.id ? 'parent' : 'child' %>">
+  <td class="parent_id"><%= todo.parent_id if todo.parent_id == todo.id %></td>
+  <td class="id"><%= todo.id unless todo.parent_id == todo.id %></td>
+  <td class="title"><%= todo.title %></td>
+  <td class="show_desc"><a onclick="">show desc.</a></td>
+  <td class="due_date"><%= todo.due_at.to_time.getlocal.strftime("%b. %-d, %Y")  %></td>
+  <td class="due_time"><%= todo.has_time_due ? todo.due_at.to_time.getlocal.strftime("%-l:%M %p (%Z)") : ""  %></td>
+  <td class="done">[&nbsp;]</td>
+</tr>
+<tr class="hidden todo-desc <%= todo.parent_id == todo.id ? 'parent' : 'child' %>">
+  <td colspan=7><%= todo.desc %></td>
+</tr>

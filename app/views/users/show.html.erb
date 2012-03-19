@@ -1,4 +1,34 @@
-<h1> Show User </h1>
+<h1>Welcome, <%= @user.first_name %>!</h1>
+<div class="todos">
+  <h3>To Do:</h3>
+  <% unless @user.todos.empty? %>
+    <% parent_todos = @user.todos.where("parent_id = id").order("due_at ASC") %>
+    <% todos = Array.new %>
+    <%
+    parent_todos.each do |parent|
+      todos << parent
+      children = @user.todos.where("parent_id = #{parent.id}")
+      children.each do |c|
+        todos << c unless c.id == c.parent_id
+      end
+    end %>
+    <table>
+      <thead>
+        <tr>
+          <th>Parent ID</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>(show)</th>
+          <th>Due Date</th>
+          <th>Due Time</th>
+          <th>Done?</th>
+        </tr>
+      </thead>
+      <%= render todos %>
+    </table>
+  <% end %>
+  <% #form_for %>
+</div>
 <pre>
   <%= @user.to_yaml %>  
 </pre>

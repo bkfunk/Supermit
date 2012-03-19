@@ -56,7 +56,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @title = "Show User"
+    @todos = @user.todos
+    @title = @user.first_name + "'s Dashboard"
+    @page_type = "dashboard"
   end
   
   def edit
