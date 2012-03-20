@@ -1,0 +1,20 @@
+<mockup version="1.0" skin="sketch" measuredW="1116" measuredH="595" mockupW="1100" mockupH="571">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="23" y="220" w="805" h="178" measuredW="200" measuredH="178" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dashboard%0ASubmissions%0AStories%0AJournals</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="16" y="24" w="1100" h="571" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Supermit%20%7C%20Brian%27s%20Dashboard%0Ahttp%3A//www.supermit.com/users/1/dashboard</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="116" y="100" w="-1" h="-1" measuredW="358" measuredH="120" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./public/images/logo-small.png</src>
+        <text>Logo</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

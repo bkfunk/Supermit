@@ -1,4 +1,25 @@
 <h1>Welcome, <%= @user.first_name %>!</h1>
+<div class="pending-container clearfix">
+  <h3>Pending Submissions:</h3>
+  <%= subs = @user.pieces.joins('LEFT OUTER JOIN submissions ON submissions.piece_id = pieces.id') %>
+  <% subs.each do |s| %>
+    <%= "Piece " + s.id.to_s %>
+  <% end %>
+  <table class="pending-table">
+    <thead>
+      <tr>
+        <th>Story</th>
+        <th>Journal</th>
+        <th>Method</th>
+        <th>Date</th>
+        <th>(add response)</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  
+</div>
 <div class="todos-container clearfix">
   <h3>To Do:</h3>
   <% unless @user.todos.empty? %>
@@ -25,7 +46,9 @@
           <th>Done?</th>
         </tr>
       </thead>
-      <%= render todos %>
+      <tbody>
+        <%= render todos %>
+      </tbody>
     </table>
   <% end %>
   <% #form_for

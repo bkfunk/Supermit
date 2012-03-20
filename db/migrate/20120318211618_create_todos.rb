@@ -3,7 +3,7 @@ class CreateTodos < ActiveRecord::Migration
     create_table :todos do |t|
       t.integer :user_id
       t.string :title
-      t.string :desc
+      t.text :desc
       t.integer :parent_id
       t.datetime :due_at
       t.boolean :has_time_due

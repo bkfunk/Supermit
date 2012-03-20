@@ -46,5 +46,43 @@ namespace :db do
         
       end
     end
+    
+    Outlet.create!(:title => "Tin House",
+                   :url => "http://www.tinhouse.com/magazine/")
+    Outlet.create!(:title => "McSweeney's Quarterly Concern",
+                   :affiliation => "McSweeney's",
+                   :url => "http://www.mcsweeneys.net/books#category0",
+                   :submit_method => "online")
+    3.times do
+      Outlet.create!(:title => Faker::Address.city + " Review",
+                     :url => Faker::Internet.domain_name)
+    end
+    
+    genres = [ 'fiction', 'essay', 'poetry', 'other' ]
+    
+    User.all(:limit => 6).each do |user|
+      (rand(5)+1).times do
+        genre = genres[rand(4)]
+        piece = user.pieces.create!(:title => Faker::Lorem.sentence,
+                      :genre => genre)
+        # Create a random number of submissions for each piece
+        rand(4).times do
+          sub_date = Date.today() - rand(14).days
+          if rand() < 0.3
+            res_date = sub_date + rand(30).days
+            res = rand < 0.1 ? "accept" : "decline"
+          else
+            res_date = nil
+            res = nil
+          end
+          outlet = Outlet.find(rand(Outlet.count) + 1)
+          piece.submissions.create!(:submit_date => sub_date,
+                        :outlet_id => outlet.id,
+                        :response_date => res_date,
+                        :response => res,
+                        :user_id => piece.user_id)
+        end
+      end
+    end
   end
 end

@@ -10,7 +10,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318211618) do
+ActiveRecord::Schema.define(:version => 20120319191252) do
+
+  create_table "outlets", :force => true do |t|
+    t.string   "title"
+    t.text     "desc"
+    t.string   "url"
+    t.string   "type"
+    t.string   "genres"
+    t.string   "submit_method"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "outlets", ["title"], :name => "index_outlets_on_title"
+
+  create_table "pieces", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "desc"
+    t.string   "genre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pieces", ["title"], :name => "index_pieces_on_title"
+  add_index "pieces", ["user_id"], :name => "index_pieces_on_user_id"
+
+  create_table "submissions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "piece_id"
+    t.integer  "outlet_id"
+    t.text     "desc"
+    t.string   "submit_method"
+    t.datetime "submit_date"
+    t.text     "submit_note"
+    t.string   "response"
+    t.string   "response_date"
+    t.text     "response_note"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "submissions", ["outlet_id"], :name => "index_submissions_on_outlet_id"
+  add_index "submissions", ["piece_id"], :name => "index_submissions_on_piece_id"
+  add_index "submissions", ["submit_date", "response_date"], :name => "index_submissions_on_submit_date_and_response_date"
+  add_index "submissions", ["user_id"], :name => "index_submissions_on_user_id"
 
   create_table "todos", :force => true do |t|
     t.integer  "user_id"

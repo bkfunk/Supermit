@@ -80,17 +80,26 @@ section {
   padding: 10px 20px;
 }
 
-
+/* Pending submissions */
+.pending-container {
+  
+  border: 1px solid #999;
+  float: left;
+  width: 400px;
+  margin: 5px;
+}
 
 /* Todo List */
 .todos-container {
+  border: 1px solid #999;
   float: left;
-  width: 200px;
+  width: 400px;
+  margin: 5px;
 }
 
 
 /* Fonts */
-#motto, nav, .ruluko {
+#motto, nav, h3, .ruluko {
   font-family: 'Ruluko', sans-serif;
 }
 
